@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testing
+    username: postgres
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+server:
+  port: 5000
+security:
+  jwt:
+    token-expiration-time: 15
+    token-secret: ${TOKEN_SECRET}
+    header-name: Authorization
+    header-prefix: Bearer

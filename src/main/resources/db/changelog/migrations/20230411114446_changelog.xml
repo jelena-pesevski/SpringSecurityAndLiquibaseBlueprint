@@ -1,0 +1,40 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="JelenaPesevski (generated)" id="1681213491037-1">
+        <createSequence incrementBy="1" sequenceName="stud_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="JelenaPesevski (generated)" id="1681213491037-2">
+        <createSequence incrementBy="1" sequenceName="subj_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="JelenaPesevski (generated)" id="1681213491037-3">
+        <createSequence incrementBy="1" sequenceName="user_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="JelenaPesevski (generated)" id="1681213491037-4">
+        <createTable tableName="student">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="studentPK"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="JelenaPesevski (generated)" id="1681213491037-5">
+        <createTable tableName="subject">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="subjectPK"/>
+            </column>
+            <column name="ects" type="INTEGER"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="JelenaPesevski (generated)" id="1681213491037-6">
+        <createTable tableName="user">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="userPK"/>
+            </column>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="role" type="SMALLINT"/>
+            <column name="username" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
